@@ -1,5 +1,10 @@
-it('acessa a página da política de privacidade removendo o target e então clicando no link', () => {
-    cy.visit('./src/privacy.html')
-    cy.contains('h1', 'CAC TAT - Política de Privacidade').should('be.visible')
-    cy.contains('p', 'Talking About Testing').should('be.visible')
+// Empacotando o teste para executar várias vezes repetidas
+Cypress._.times(3, () => {
+    it('acessa a página da política de privacidade removendo o target e então clicando no link', () => {
+        cy.visit('./src/privacy.html')
+        cy.contains('h1', 'CAC TAT - Política de Privacidade').should(
+            'be.visible'
+        )
+        cy.contains('p', 'Talking About Testing').should('be.visible')
+    })
 })
